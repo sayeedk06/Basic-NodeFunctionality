@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>To do list</title>
-  </head>
-  <body>
-    <h1>Suppp man <%= foo %></h1>
-    <form  action="/" method="post">
-      <input type="text" name="test1" placeholder="enter test">
-      <button type="submit" name="button"> click to test</button>
 
+<head>
+  <meta charset="utf-8">
+  <title>To do list</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <div class="box" id="heading">
+    <h1>Today is <%= foo %></h1>
+  </div>
+
+  <div class="box">
+    <% for(let i=0; i<listItem.length;i++){ %>
+
+    <div class="item">
+      <input type="checkbox">
+      <p><%= listItem[i] %></p>
+
+    </div>
+    <% } %>
+
+    <form  class="item" action="/" method="post">
+      <input type="text" name="addItem" placeholder="Enter new item" autocomplete="off">
+      <button type="submit" name="button"> + </button>
     </form>
+</div>
+
+
+
   </body>
 </html>
